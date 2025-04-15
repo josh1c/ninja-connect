@@ -13,7 +13,7 @@
       --color-input-border: #cfd8dc;
       --color-button-bg: #00a9b5;
       --color-button-text: #ffffff;
-      --color-container-bg: rgba(255, 255, 255, 0.85);
+      --color-container-bg: #ffffff;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -24,7 +24,7 @@
         --color-input-border: #444;
         --color-button-bg: #00a9b5;
         --color-button-text: #ffffff;
-        --color-container-bg: rgba(0, 0, 0, 0.85);
+        --color-container-bg: #1c1c1c;
       }
     }
 
@@ -32,40 +32,31 @@
       margin: 0;
       padding: 0;
       height: 100%;
+      background-color: var(--color-bg);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-      background: linear-gradient(-45deg, #00a9b5, #0d1c2e, #00a9b5, #0d1c2e);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       color: var(--color-text);
-    }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
     }
 
     .container {
       background: var(--color-container-bg);
-      backdrop-filter: blur(12px);
       padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       width: 90%;
-      max-width: 420px;
+      max-width: 400px;
       text-align: center;
     }
 
     .logo {
-      width: 240px;
-      margin-bottom: 30px;
+      width: 80px;
+      margin: 0 auto 24px;
     }
 
     h1 {
-      font-size: 22px;
+      font-size: 20px;
       margin-bottom: 20px;
       font-weight: 600;
     }
@@ -103,18 +94,18 @@
     }
 
     .footer {
-      margin-top: 25px;
-      font-size: 13px;
-      color: #aaa;
+      margin-top: 20px;
+      font-size: 12px;
+      color: #888;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="logo">
-      <!-- Inline SVG Logo -->
-      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 478.51 89.618">
-        <path fill="#00a9b5" d="M180.416 71.217v16.98H127.27V1.538h19.197v69.68h33.948Zm5.8-69.68h18.963v53.519c0 5.153 1.58 9.193 4.741 12.12 3.161 2.928 7.317 4.392 12.467 4.392 4.914 0 8.95-1.465 12.106-4.396l.303-.288c3.355-3.123 5.033-7.066 5.033-11.828V1.538h18.964V55.64c0 5.31-.956 10.052-2.868 14.23-1.912 4.176-4.526 7.728-7.843 10.656-3.317 2.928-7.18 5.172-11.589 6.734-4.189 1.483-8.642 2.262-13.359 2.336l-.747.006c-4.916.078-9.58-.683-13.988-2.284-4.41-1.6-8.273-3.884-11.59-6.85-3.316-2.967-5.93-6.559-7.842-10.775-1.912-4.215-2.83-8.9-2.751-14.053V1.538Z"/>
+      <!-- Inline logo (abbreviated or swap with full SVG if preferred) -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" width="100%" height="auto">
+        <text x="0" y="30" font-size="30" fill="#00a9b5" font-family="Arial, sans-serif">LU</text>
       </svg>
     </div>
 
@@ -125,7 +116,6 @@
   </div>
 
   <script>
-    // Redirect handler
     function goToNinja() {
       const id = document.getElementById('ninjaId').value.trim();
       if (/^\d{7,15}$/.test(id)) {
@@ -135,12 +125,10 @@
       }
     }
 
-    // Optional: Enter key submits form
     document.getElementById("ninjaId").addEventListener("keydown", function (e) {
       if (e.key === "Enter") goToNinja();
     });
 
-    // Autofocus input on load
     window.onload = () => document.getElementById("ninjaId").focus();
   </script>
 </body>
