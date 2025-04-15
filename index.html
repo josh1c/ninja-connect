@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Connect to NinjaOne</title>
   <style>
-    /* Reset and base styles */
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
@@ -19,27 +18,29 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      color: #222;
+      color: #1c1c1e;
     }
 
     .container {
-      background: white;
+      background: #fff;
       padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
-      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
       width: 90%;
       max-width: 420px;
+      text-align: center;
     }
 
     .logo {
-      width: 140px;
-      margin-bottom: 30px;
+      width: 240px;
+      max-width: 100%;
+      margin: 0 auto 30px;
     }
 
     h1 {
-      font-size: 24px;
+      font-size: 22px;
       margin-bottom: 20px;
+      font-weight: 600;
       color: #0d1c2e;
     }
 
@@ -50,7 +51,7 @@
       border: 1.5px solid #cfd8dc;
       border-radius: 8px;
       margin-bottom: 20px;
-      transition: border-color 0.3s;
+      transition: border-color 0.3s ease;
     }
 
     input:focus {
@@ -67,7 +68,7 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.3s;
+      transition: background-color 0.3s ease;
     }
 
     button:hover {
@@ -77,21 +78,20 @@
     .footer {
       margin-top: 25px;
       font-size: 13px;
-      color: #888;
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 20px;
-      }
+      color: #999;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="https://wearelumora.com/wp-content/uploads/2023/12/Lumora-whiteBG-Logo.svg" alt="Lumora Logo" class="logo">
+    <div class="logo">
+      <svg class="logo-lg" xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 478.51 89.618">
+        <path fill="#00a9b5" fill-rule="nonzero" d="M180.416 71.217v16.98H127.27V1.538h19.197v69.68h33.948Zm5.8-69.68h18.963v53.519c0 5.153 1.58 9.193 4.741 12.12 3.161 2.928 7.317 4.392 12.467 4.392 4.914 0 8.95-1.465 12.106-4.396l.303-.288c3.355-3.123 5.033-7.066 5.033-11.828V1.538h18.964V55.64c0 5.31-.956 10.052-2.868 14.23-1.912 4.176-4.526 7.728-7.843 10.656-3.317 2.928-7.18 5.172-11.589 6.734-4.189 1.483-8.642 2.262-13.359 2.336l-.747.006c-4.916.078-9.58-.683-13.988-2.284-4.41-1.6-8.273-3.884-11.59-6.85-3.316-2.967-5.93-6.559-7.842-10.775-1.912-4.215-2.83-8.9-2.751-14.053V1.538Zm172.961 0v86.66h-18.612V43.932l-17.208 44.267h-17.91L288.59 44.282v43.916h-18.027V1.538h18.027l25.87 64.643 26.105-64.643h18.612Zm49.58-1.522c6.322-.078 12.097.996 17.325 3.22 5.23 2.226 9.716 5.349 13.462 9.37 3.746 4.02 6.653 8.782 8.721 14.286 2.068 5.505 3.063 11.458 2.985 17.86.078 6.401-.917 12.354-2.985 17.858-2.068 5.505-4.994 10.286-8.78 14.346-3.784 4.06-8.291 7.222-13.52 9.486-5.228 2.264-11.003 3.318-17.325 3.162-6.243.078-11.96-.996-17.149-3.22-5.19-2.226-9.657-5.349-13.403-9.37-3.746-4.02-6.653-8.782-8.721-14.286-2.068-5.505-3.063-11.458-2.985-17.86-.078-6.401.917-12.354 2.985-17.858 2.068-5.505 4.975-10.286 8.72-14.346 3.747-4.06 8.234-7.222 13.463-9.486C396.778.913 402.514-.141 408.758.015Zm.118 71.085c7.023 0 12.505-2.323 16.447-6.968 3.94-4.645 5.911-11.106 5.911-19.382 0-8.275-1.97-14.736-5.911-19.381-3.942-4.645-9.424-6.968-16.447-6.968-7.102 0-12.623 2.323-16.564 6.968-3.941 4.645-5.912 11.106-5.912 19.381 0 8.276 1.97 14.737 5.912 19.382 3.94 4.645 9.462 6.968 16.564 6.968Zm95.584 17.098L491.7 57.632h-14.28v30.566h-18.964V1.538h33.479c11.082.078 19.354 2.478 24.817 7.202 5.463 4.723 8.194 11.691 8.194 20.903 0 5.934-1.19 11.009-3.57 15.225-2.38 4.215-5.912 7.416-10.594 9.602l14.889 33.515 30.828-86.447h18.495l30.787 86.66h-20.134l-6.087-18.27H551.58l-6.204 18.27H504.46Zm61.17-59.374-8.546 25.178h17.091l-8.545-25.178Zm-73.695-10.54h-14.515v22.953h14.398c4.526 0 7.843-1.054 9.95-3.162 2.107-2.108 3.16-4.918 3.16-8.432 0-3.357-1.033-6.09-3.101-8.197-2.068-2.108-5.366-3.162-9.892-3.162Z" transform="translate(-127.27)"/>
+      </svg>
+    </div>
+
     <h1>Enter Your NinjaOne Connect ID</h1>
-    <input type="text" id="ninjaId" placeholder="e.g., 8589921711">
+    <input type="text" id="ninjaId" placeholder="e.g., 8589921711" />
     <button onclick="goToNinja()">Connect</button>
     <div class="footer">Powered by Lumora</div>
   </div>
@@ -100,8 +100,7 @@
     function goToNinja() {
       const id = document.getElementById('ninjaId').value.trim();
       if (/^\d{7,15}$/.test(id)) {
-        const url = `https://eu.ninjarmm.com/connect/#/${id}`;
-        window.location.href = url;
+        window.location.href = `https://eu.ninjarmm.com/connect/#/${id}`;
       } else {
         alert("Please enter a valid numeric ID (7–15 digits).");
       }
